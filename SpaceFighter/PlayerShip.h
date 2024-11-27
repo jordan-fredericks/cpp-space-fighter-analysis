@@ -55,6 +55,14 @@ public:
 		@param isConfined True to confine the player ship to the screen, false otherwise. */
 	virtual void ConfineToScreen(const bool isConfined = true) { m_isConfinedToScreen = isConfined; }
 
+	/** @brief Gets the speed of the ship.
+		@return Returns the speed of the ship. */
+	virtual float GetSpeed() const { return m_speed; }
+
+	/** @brief Sets the speed of the ship.
+		@param speed The speed of the ship. */
+	virtual void SetSpeed(const float speed) { m_speed = speed; }
+
 
 protected:
 
@@ -81,5 +89,7 @@ private:
 	bool m_isConfinedToScreen = false;
 
 	Texture* m_pTexture = nullptr;
+
+	float m_speed = 600; // pixels per second
 
 };
